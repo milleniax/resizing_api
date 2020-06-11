@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load thumbnail %}
+
+{% block title %}
+   page
+{% endblock title %}
+
+{% block content %}
+    
+    {% for picture in pictures %}
+        {% with picture.image as im %}
+            <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
+        {% endwith %}
+    {% endfor %}
+    
+{% endblock content %}
